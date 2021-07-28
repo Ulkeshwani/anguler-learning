@@ -29,4 +29,8 @@ export class TaskService {
     const url = `${this.apiUrl}/${task.id}`;
     return this.httpRequest.put<Task>(url, task, httpOptions);
   }
+
+  addTask(task: Task): Observable<Task> {
+    return this.httpRequest.post<Task>(this.apiUrl, task, httpOptions);
+  }
 }
